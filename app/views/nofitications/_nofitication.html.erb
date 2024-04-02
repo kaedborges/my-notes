@@ -1,0 +1,37 @@
+<div id="<%= dom_id nofitication %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= nofitication.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= nofitication.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Type:</strong>
+    <%= nofitication.type %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Send status:</strong>
+    <%= nofitication.send_status %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Send at:</strong>
+    <%= nofitication.send_at %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= nofitication.user_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this nofitication", nofitication, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this nofitication", edit_nofitication_path(nofitication), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

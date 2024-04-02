@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV.fetch("BOX_DATABASE_SERVER") %>
+  port: <%= ENV.fetch("BOX_DATABASE_PORT") %>
+  username: <%= ENV.fetch("BOX_DATABASE_USERNAME") %>
+  password: <%= ENV.fetch("BOX_DATABASE_PASSWORD") %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: auranotes_development
+
+test:
+  <<: *default
+  database: auranotes_test
+
+production:
+  <<: *default
+  database: auranotes_production
